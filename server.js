@@ -14,7 +14,7 @@ const mockUserData=[
          })
     })
 
-
+    //app.listen
     app.get('/users/:id',function(req,res){
         console.log(req.params.id)
         res.json({
@@ -26,6 +26,10 @@ const mockUserData=[
 
 
 
-app.listen(8000,function(){
-    console.log("server is running")
-    })
+// app.listen(8000,function(){
+//     console.log("server is running")
+//     })
+
+    const listener = app.listen(process.env.PORT, () => {
+        console.log("Your app is listening on port " + listener.address().port);
+      });
